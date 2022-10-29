@@ -51,7 +51,7 @@
                 <div class="nav-item dropdown">
                     @auth
                     <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                        <span class="avatar avatar-sm" style="background-image: url(/static/avatars/000m.jpg)"></span>
+                        <span class="avatar avatar-sm" style="background-image: url(public/static/avatars/000m.jpg)"></span>
 
                         <div class="d-none d-xl-block ps-2">
                             <div>
@@ -102,43 +102,43 @@
                             <div class="dropdown-menu">
                                 <div class="dropdown-menu-columns">
                                     <div class="dropdown-menu-column">
-                                        <a class="dropdown-item" href="./empty.html" >
+                                        <a class="dropdown-item" href="/empty.html" >
                                             Empty page
                                         </a>
-                                        <a class="dropdown-item" href="./accordion.html" >
+                                        <a class="dropdown-item" href="/accordion.html" >
                                             Accordion
                                         </a>
-                                        <a class="dropdown-item" href="./blank.html" >
+                                        <a class="dropdown-item" href="/blank.html" >
                                             Blank page
                                         </a>
-                                        <a class="dropdown-item" href="./buttons.html" >
+                                        <a class="dropdown-item" href="/buttons.html" >
                                             Buttons
                                         </a>
-                                        <a class="dropdown-item" href="./cards.html" >
+                                        <a class="dropdown-item" href="/cards.html" >
                                             Cards
                                         </a>
-                                        <a class="dropdown-item" href="./cards-masonry.html" >
+                                        <a class="dropdown-item" href="/cards-masonry.html" >
                                             Cards Masonry
                                         </a>
-                                        <a class="dropdown-item" href="./colors.html" >
+                                        <a class="dropdown-item" href="/colors.html" >
                                             Colors
                                         </a>
-                                        <a class="dropdown-item" href="./dropdowns.html" >
+                                        <a class="dropdown-item" href="/dropdowns.html" >
                                             Dropdowns
                                         </a>
-                                        <a class="dropdown-item" href="./icons.html" >
+                                        <a class="dropdown-item" href="/icons.html" >
                                             Icons
                                         </a>
-                                        <a class="dropdown-item" href="./modals.html" >
+                                        <a class="dropdown-item" href="/modals.html" >
                                             Modals
                                         </a>
-                                        <a class="dropdown-item" href="./maps.html" >
+                                        <a class="dropdown-item" href="/maps.html" >
                                             Maps
                                         </a>
-                                        <a class="dropdown-item" href="./map-fullsize.html" >
+                                        <a class="dropdown-item" href="/map-fullsize.html" >
                                             Map fullsize
                                         </a>
-                                        <a class="dropdown-item" href="./maps-vector.html" >
+                                        <a class="dropdown-item" href="/maps-vector.html" >
                                             Vector maps
                                         </a>
                                     </div>
