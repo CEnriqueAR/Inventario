@@ -49,11 +49,17 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
+                    @auth
                     <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
+                        <span class="avatar avatar-sm" style="background-image: url(/static/avatars/000m.jpg)"></span>
+
                         <div class="d-none d-xl-block ps-2">
-                            <div>Paweł Kuna</div>
-                            <div class="mt-1 small text-muted">UI Designer</div>
+                            <div>
+                                    {{auth()->user()->name}}&nbsp;
+                                    <div class="text-end">
+                                    </div>
+
+                            </div>
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -62,9 +68,10 @@
                         <a href="#" class="dropdown-item">Feedback</a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">Settings</a>
-                        <a href="#" class="dropdown-item">Logout</a>
+                        <a href="{{ route('logout.perform') }}" class="dropdown-item">Logout</a>
                     </div>
                 </div>
+                @endauth
             </div>
         </div>
     </header>
@@ -209,43 +216,25 @@
                             <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                     <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/star -->
                       <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
+
+                      @auth
+
+
+
+
                     </span>
                                 <span class="nav-link-title">
-                      Extra
+                      Usuario
                     </span>
+
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="./activity.html" >
-                                    Activity
-                                </a>
-                                <a class="dropdown-item" href="./gallery.html" >
-                                    Gallery
-                                </a>
-                                <a class="dropdown-item" href="./invoice.html" >
-                                    Invoice
-                                </a>
-                                <a class="dropdown-item" href="./search-results.html" >
-                                    Search results
-                                </a>
-                                <a class="dropdown-item" href="./pricing.html" >
-                                    Pricing cards
-                                </a>
-                                <a class="dropdown-item" href="./users.html" >
-                                    Users
-                                </a>
-                                <a class="dropdown-item" href="./license.html" >
-                                    License
-                                </a>
-                                <a class="dropdown-item" href="./music.html" >
-                                    Music
-                                </a>
-                                <a class="dropdown-item" href="./widgets.html" >
-                                    Widgets
-                                </a>
-                                <a class="dropdown-item" href="./wizard.html" >
-                                    Wizard
-                                </a>
+                                <a href="{{ route('users.index') }}" class="dropdown-item">Users</a>
+                                <a href="{{ route('roles.index') }}" class="dropdown-item">Roles</a>
+                                <a href="{{ route('permissions.index') }}" class="dropdown-item">Permisos</a>
+
                             </div>
+                        @endauth
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#navbar-layout" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
@@ -327,20 +316,13 @@
                 </div>
             </div>
 
-            <div>
-                @auth
-                    {{auth()->user()->name}}
-                    <div class="text-end">
-                        <a href="{{ route('logout.perform') }}" class="btn btn-tabler me-2">Logout</a>
-                    </div>
-                @endauth
-
-                @guest
-                    <div class="text-end">
-                        <a href="{{ route('login.perform') }}" class="btn btn-tabler me-2">Login</a>
-                        <a href="{{ route('register.perform') }}" class="btn btn-warning">Sign-up</a>
-                    </div>
-                @endguest
+           <div>
+                    @guest
+                        <div class="text-end">
+                            <a href="{{ route('login.perform') }}" class="btn btn-outline-light me-2">Login</a>
+                            <a href="{{ route('register.perform') }}" class="btn btn-warning">Sign-up</a>
+                        </div>
+                    @endguest
             </div>
         </div>
     </div>
